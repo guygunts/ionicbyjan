@@ -1,0 +1,55 @@
+<ion-header translucent>
+  <ion-toolbar class="new-background-color">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/knowledge"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{title}}</ion-title>
+  </ion-toolbar>
+</ion-header> 
+<ion-content fullscreen class="ion-padding">
+  <div *ngIf="title === 'question'">
+      <div *ngFor="let items  of answer;">   
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>{{items.question}}</ion-card-title>
+          </ion-card-header>
+        
+          <ion-card-content>
+            {{items.answer}}
+          </ion-card-content>
+        </ion-card>
+          
+      </div>
+    </div>
+
+    <div *ngIf="title === 'type driver license'">
+      <div *ngFor="let items  of answer;">   
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>ชนิดของใบขับขี่</ion-card-title>
+          </ion-card-header>
+        
+          <ion-card-content>
+            <p><span [innerHTML]="items.description"></span></p>
+          </ion-card-content>
+        </ion-card>
+          
+      </div>
+    </div>
+
+    <div *ngIf="title === 'penalty'">
+      <div *ngFor="let items  of answer;">   
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>ค่าปรับใบขับขี่</ion-card-title>
+          </ion-card-header>
+        
+          <ion-card-content>
+            <p><span [innerHTML]="items.description"></span></p>
+          </ion-card-content>
+        </ion-card>
+          
+      </div>
+    </div>
+
+</ion-content>

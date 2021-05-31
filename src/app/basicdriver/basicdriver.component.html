@@ -1,0 +1,47 @@
+<ion-header translucent>
+  <ion-toolbar class="new-background-color">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>การขับขี่ยานพาหนะ</ion-title>
+  </ion-toolbar>
+</ion-header> 
+<ion-content fullscreen class="ion-padding">
+  <ion-row>
+    <ion-col class="ion-align-self-center">
+    </ion-col>
+    <ion-col class="ion-align-self-end">
+      <ion-button expand="block"  (click)='showDetail("resultbasic","basicdrivergetView")'>ฝึกพื้นฐานขับขี่</ion-button>
+    </ion-col>
+    <ion-col>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="ion-align-self-center">
+    </ion-col>
+    <ion-col class="ion-align-self-end">
+      <ion-button expand="block" (click)='showDetail("resultbasic","propertygetView")'>คุณสมบัติและเอกสาร</ion-button>
+    </ion-col>
+    <ion-col>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="ion-align-self-center">
+    </ion-col>
+    <ion-col class="ion-align-self-end">
+      <ion-button expand="block" (click)='showDetail("resultbasic","trafficgetView")'>เครื่องหมายจราจร</ion-button>  
+    </ion-col>
+    <ion-col>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="ion-align-self-center">
+    </ion-col>
+    <ion-col class="ion-align-self-end">
+      <ion-button (click)='showDetail("resultbasic","technicalgetView")'>เทคนิคการสอบปฎิบัติ</ion-button>
+    </ion-col>
+    <ion-col>
+    </ion-col>
+  </ion-row>
+
+</ion-content>

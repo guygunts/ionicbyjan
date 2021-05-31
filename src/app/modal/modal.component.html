@@ -1,0 +1,28 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-title>Result</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissModal()">Close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen>
+ 
+    <div *ngFor="let items  of exams;">    
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>{{items.exam_name}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-list>
+            <ion-radio-group  value="{{items.result}}">
+            <ion-item *ngFor="let entry of items.exam_choice">
+              <ion-radio slot="start" color="success" value="{{entry.id_exam_choice}}" disabled></ion-radio>
+                <ion-label>{{entry.exam_choice_name}}</ion-label>
+            </ion-item>
+          </ion-radio-group>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+    </div>
+</ion-content>

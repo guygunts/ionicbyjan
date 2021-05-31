@@ -1,0 +1,64 @@
+<ion-header translucent>
+  <ion-toolbar class="new-background-color">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{title}}</ion-title>
+  </ion-toolbar>
+</ion-header> 
+<ion-content fullscreen class="ion-padding">
+      <form  (ngSubmit)="totalresult();">
+      <div *ngFor="let items  of exams;">    
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>{{items.exam_name}}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-list>
+              <ion-radio-group  [(ngModel)]="todo[items.exam_name]" name="{{items.exam_name}}">
+              <ion-item *ngFor="let entry of items.exam_choice">
+                <ion-radio slot="start" color="success" value="{{entry.value}}" ></ion-radio>
+                  <ion-label>{{entry.label}}</ion-label>
+              </ion-item>
+            </ion-radio-group>
+            </ion-list>
+          </ion-card-content>
+        </ion-card>
+      </div>
+      
+    </form>
+</ion-content>
+
+<!-- <ion-footer>
+  <ion-toolbar>
+    <ion-buttons slot="secondary">
+      <ion-button (click)="openmodal()" [disabled]="show <=3">
+        <ion-icon name="search-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Footer</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="totalresult()" [disabled]="(todo | json) == '{}'">
+        <ion-icon md="caret-back" ios="arrow-redo-sharp"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer> -->
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons slot="secondary">
+      <ion-button (click)="openmodal()" [disabled]="show <=3">
+        <ion-icon name="search-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title></ion-title>
+
+    <ion-buttons slot="primary">
+      <ion-button (click)="totalresult()" [disabled]="(todo | json) == '{}'">
+        <ion-icon md="caret-back" ios="arrow-redo-sharp"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

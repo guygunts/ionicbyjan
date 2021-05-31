@@ -1,0 +1,58 @@
+<ion-header translucent>
+  <ion-toolbar class="new-background-color">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/basicdriver"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{title}}</ion-title>
+  </ion-toolbar>
+</ion-header> 
+<ion-content fullscreen class="ion-padding">
+  <div *ngIf="title == 'basicdriver'">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>motorcycle</ion-title>
+    </ion-toolbar>
+  </ion-header> 
+</div>
+  <!-- <ion-slides> -->
+    <!-- <ion-slide *ngFor="let items  of image;"> -->
+      <div *ngFor="let items  of imagemotorcycle;">
+        <!-- <p>{{items.type_car}}</p> -->     
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title><ion-img  [src]="items.image" ></ion-img>     </ion-card-title>
+          </ion-card-header>
+        
+          <ion-card-content>
+            <p><span [innerHTML]="items.description"></span></p>
+            
+          </ion-card-content>
+        </ion-card>
+        
+
+         
+      </div>
+    
+      
+    <!-- </ion-slide> -->
+  <!-- </ion-slides> -->
+ <div *ngIf="title == 'basicdriver'">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>car</ion-title>
+    </ion-toolbar>
+  </ion-header> 
+  <div *ngFor="let items  of imagecar;"> 
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title><ion-img  [src]="items.image" ></ion-img>     </ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content>
+        <p><span [innerHTML]="items.description"></span></p>
+        
+      </ion-card-content>
+    </ion-card>
+  </div>
+</div>
+</ion-content>
